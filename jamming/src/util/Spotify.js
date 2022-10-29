@@ -4,7 +4,6 @@
 
  const Spotify =  {
      getAccessToken() {
-         console.log(accessToken)
          if(accessToken) {
              return accessToken; 
          }
@@ -37,6 +36,7 @@
              }).then(jsonResponse => {
                  if(!jsonResponse.tracks){
                      return []
+                    
                  }
                  return jsonResponse.tracks.items.map(track => ({
                     id: track.id,
